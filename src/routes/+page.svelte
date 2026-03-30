@@ -1,3 +1,7 @@
+<svelte:head>
+  <title>Liam Dyer</title>
+</svelte:head>
+
 <div class="intro">
   <h1>Greetings Fellow Humans! I am...</h1>
   <h2>Liam Dyer</h2>
