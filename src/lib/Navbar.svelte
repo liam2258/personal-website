@@ -1,35 +1,32 @@
 <script lang="ts">
+    import { resolve } from '$app/paths';
+    import favicon from '$lib/assets/favicon.svg';
     let menuOpen = $state(false);
     function toggleMenu() {
         menuOpen = !menuOpen;
     }
 </script>
-
 <nav class="desktop-nav">
-    <a href="/" class="brand">
-        <img src="src\lib\assets\favicon.svg" alt="Home" class="brand-icon" />
+    <a href={resolve('/')} class="brand">
+        <img src={favicon} alt="Home" class="brand-icon" />
     </a>
     <div class="nav-links">
-        <a href="/">Projects</a>
-        <a href="/">Blog</a>
-        <a href="/">Resume</a>
+        <a href={resolve('/')}>Projects</a>
+        <a href={resolve('/')}>Blog</a>
+        <a href={resolve('/')}>Resume</a>
     </div>
 </nav>
-
-<!-- Create menu navigation for mobile devices -->
 <nav class="mobile-nav">
-    <a href="/" class="brand">Home</a>
+    <a href={resolve('/')} class="brand">Home</a>
     <button class="hamburger" onclick={toggleMenu} aria-label="Toggle menu">☰</button>
     {#if menuOpen}
         <div class="mobile-dropdown">
-            <a href="/" onclick={toggleMenu}>Projects</a>
-            <a href="/" onclick={toggleMenu}>Blog</a>
-            <a href="/" onclick={toggleMenu}>Resume</a>
+            <a href={resolve('/')} onclick={toggleMenu}>Projects</a>
+            <a href={resolve('/')} onclick={toggleMenu}>Blog</a>
+            <a href={resolve('/')} onclick={toggleMenu}>Resume</a>
         </div>
     {/if}
 </nav>
-
-<!-- Set limits for desktop or mobile nav bar -->
 <style>
     /* ---- Desktop ---- */
     .desktop-nav {
@@ -40,12 +37,10 @@
         background: var(--color-surface);
         border-bottom: 1px solid var(--color-border);
     }
-
     .brand-icon {
         height: 40px;
         width: auto;
     }
-
     .desktop-nav .brand {
         margin-right: auto;
         font-weight: 700;
@@ -54,12 +49,10 @@
         text-decoration: none;
         letter-spacing: 0.02em;
     }
-
     .nav-links {
         display: flex;
         gap: 2rem;
     }
-
     .nav-links a {
         color: var(--color-text-muted);
         text-decoration: none;
@@ -69,7 +62,6 @@
         position: relative;
         transition: color 0.2s ease;
     }
-
     .nav-links a::after {
         content: '';
         position: absolute;
@@ -80,15 +72,12 @@
         background: var(--color-primary);
         transition: width 0.25s ease;
     }
-
     .nav-links a:hover {
         color: var(--color-text);
     }
-
     .nav-links a:hover::after {
         width: 100%;
     }
-
     /* ---- Mobile ---- */
     .mobile-nav {
         display: none;
@@ -99,14 +88,12 @@
         border-bottom: 1px solid var(--color-border);
         position: relative;
     }
-
     .mobile-nav .brand {
         margin-right: auto;
         font-weight: 700;
         color: var(--color-accent);
         text-decoration: none;
     }
-
     .hamburger {
         background: none;
         border: none;
@@ -115,7 +102,6 @@
         cursor: pointer;
         padding: 0.25rem;
     }
-
     .mobile-dropdown {
         position: absolute;
         top: 56px;
@@ -128,19 +114,16 @@
         border-bottom: 1px solid var(--color-border);
         z-index: 100;
     }
-
     .mobile-dropdown a {
         color: var(--color-text-muted);
         text-decoration: none;
         padding: 0.75rem 1.5rem;
         transition: background 0.15s ease;
     }
-
     .mobile-dropdown a:hover {
         background: var(--color-background);
         color: var(--color-text);
     }
-
     @media (max-width: 768px) {
         .desktop-nav {
             display: none;

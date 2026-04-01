@@ -1,3 +1,6 @@
+<script>
+  import meImage from '$lib/assets/me.jpg';
+</script>
 <svelte:head>
   <title>Liam Dyer</title>
 </svelte:head>
@@ -30,7 +33,7 @@
       </p>
     </div>
     <div class="about-image">
-      <img src="/me.jpg" alt="Liam Dyer" />
+      <img src={meImage} alt="Liam Dyer" />
     </div>
   </div>
 </section>
