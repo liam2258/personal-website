@@ -1,6 +1,7 @@
 import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-static';
 import { relative, sep } from 'node:path';
+import { env } from 'node:process';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,7 +15,12 @@ const config = {
 			return isExternalLibrary ? undefined : true;
 		}
 	},
-	kit: { adapter: adapter() },
+	kit: {
+		adapter: adapter(),
+		paths: {
+			base: env.NODE_ENV === 'production' ? '/personal-website' : ''
+		}
+	},
 	preprocess: [mdsvex({ extensions: ['.svx', '.md'] })],
 	extensions: ['.svelte', '.svx', '.md']
 };
