@@ -11,7 +11,7 @@
         <img src={favicon} alt="Home" class="brand-icon" />
     </a>
     <div class="nav-links">
-        <a href={resolve('/')}>Projects</a>
+        <a href={resolve('/projects')}>Projects</a>
         <a href={resolve('/')}>Blog</a>
         <a href={resolve('/')}>Resume</a>
     </div>
@@ -21,7 +21,7 @@
     <button class="hamburger" onclick={toggleMenu} aria-label="Toggle menu">☰</button>
     {#if menuOpen}
         <div class="mobile-dropdown">
-            <a href={resolve('/')} onclick={toggleMenu}>Projects</a>
+            <a href={resolve('/projects')} onclick={toggleMenu}>Projects</a>
             <a href={resolve('/')} onclick={toggleMenu}>Blog</a>
             <a href={resolve('/')} onclick={toggleMenu}>Resume</a>
         </div>
