@@ -48,28 +48,6 @@
       </div>
     </div>
 
-    <div class="project">
-      <h2 class="project-title">Another Project</h2>
-      <div class="project-card">
-        <div class="project-summary">
-          <p>
-            Another project description here. Talk about the problem it solves, the approach
-            you took, and any cool technical details worth mentioning. Keep it conversational
-            and genuine — matches the tone of your header.
-          </p>
-        </div>
-        <div class="project-image">
-          <img src="/images/project-placeholder-2.png" alt="Another Project screenshot" />
-        </div>
-      </div>
-      <div class="project-tags">
-        <span class="tag">HTML</span>
-        <span class="tag">CSS</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">Node.js</span>
-      </div>
-    </div>
-
   </section>
 </div>
 
